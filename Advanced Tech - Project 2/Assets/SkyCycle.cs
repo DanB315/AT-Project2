@@ -11,6 +11,7 @@ public class SkyCycle : MonoBehaviour
     public float time;
     public int mins = 0;
     private float maxMins;
+    public float skyboxTime = 15f;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class SkyCycle : MonoBehaviour
     {
         time += Time.deltaTime;
         
-        if (time >= 60)
+        if (time >= skyboxTime)
         {
             mins += 1;
             time = 0;

@@ -9,7 +9,7 @@ public class SkyButton : MonoBehaviour
     Interact interact;
     GameObject player;
 
-    [Header("INTERACTIBLES")]
+    [Header("VARIABLES")]
     public int i = 0;
 
     void Start()

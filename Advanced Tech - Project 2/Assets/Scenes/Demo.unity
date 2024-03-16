@@ -43472,7 +43472,7 @@ Transform:
   m_GameObject: {fileID: 1153141840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: -1.564}
+  m_LocalPosition: {x: -1.637, y: 0.719, z: -3.887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51264,7 +51264,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -81293,11 +81293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyMats:
-  - {fileID: 2100000, guid: 8185c62f5ccafe247bd3d1a04315857d, type: 2}
-  - {fileID: 2100000, guid: 1407c2790b7870b42a0df8ac84066e0c, type: 2}
-  - {fileID: 2100000, guid: d4cd6577352fd4946994aa7e3e3609e4, type: 2}
-  - {fileID: 2100000, guid: b028ca26d06b2ef4fa1a51cd55473aa3, type: 2}
-  - {fileID: 2100000, guid: 3777c2609a2482a48a60ef07326b3646, type: 2}
   - {fileID: 2100000, guid: 3c2476664a0b2ea4fb81a981d970a973, type: 2}
   - {fileID: 2100000, guid: 29d2bb922f79ece4c90867d92e25976e, type: 2}
   - {fileID: 2100000, guid: eca3c00ef1cc6ce45bfade23ebc4ab1e, type: 2}
@@ -81308,8 +81303,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 43c0ad03dcb6b2a469387975f5050350, type: 2}
   - {fileID: 2100000, guid: 9aa4b22013dfe644fb71d395e6ffb330, type: 2}
   - {fileID: 2100000, guid: 71b634fec31b38b46a30f6185273a772, type: 2}
+  - {fileID: 2100000, guid: 8185c62f5ccafe247bd3d1a04315857d, type: 2}
+  - {fileID: 2100000, guid: 1407c2790b7870b42a0df8ac84066e0c, type: 2}
+  - {fileID: 2100000, guid: d4cd6577352fd4946994aa7e3e3609e4, type: 2}
+  - {fileID: 2100000, guid: b028ca26d06b2ef4fa1a51cd55473aa3, type: 2}
+  - {fileID: 2100000, guid: 3777c2609a2482a48a60ef07326b3646, type: 2}
   time: 0
   mins: 0
+  skyboxTime: 10
 --- !u!4 &1931943037
 Transform:
   m_ObjectHideFlags: 0
