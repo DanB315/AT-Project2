@@ -8,6 +8,7 @@ TagManager:
   - Mud
   - Grass
   - Water
+  - Wood
   layers:
   - Default
   - TransparentFX

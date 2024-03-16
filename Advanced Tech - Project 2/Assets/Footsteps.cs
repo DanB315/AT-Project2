@@ -8,6 +8,7 @@ public class Footsteps : MonoBehaviour
     FPSController fpc;
     AudioSource footsteps;
     public AudioClip grassFoot, mudFoot, waterFoot;
+    CharacterController charController;
 
     [Header("VARIABLES")]
     public string currentGround;
@@ -16,6 +17,7 @@ public class Footsteps : MonoBehaviour
     {
         fpc = GetComponent<FPSController>();
         footsteps = GameObject.Find("FootstepsAudio").GetComponent<AudioSource>();
+        charController = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -26,28 +28,43 @@ public class Footsteps : MonoBehaviour
             currentGround = hit.collider.gameObject.tag;
         }
 
-        if (fpc.isMoving)
+        if (fpc.isMoving && charController.isGrounded)
         {
-            footsteps.Play();
-            if (currentGround == "Grass")
+            if (!footsteps.isPlaying)
             {
-                footsteps.clip = grassFoot;
-            }
-
-            else if (currentGround == "Mud")
-            {
-                footsteps.clip = mudFoot;
-            }
-
-            else if (currentGround == "Water")
-            {
-                footsteps.clip = waterFoot;
+                footsteps.Play();
             }
         }
 
         else
         {
             footsteps.Stop();
+        }
+
+        if (fpc.isSprinting)
+        {
+            footsteps.pitch = 1.5f;
+        }
+
+        else
+        {
+            footsteps.pitch = 1f;
+        }
+
+
+        if (currentGround == "Grass")
+        {
+            footsteps.clip = grassFoot;
+        }
+
+        else if (currentGround == "Mud")
+        {
+            footsteps.clip = mudFoot;
+        }
+
+        else if (currentGround == "Water")
+        {
+            footsteps.clip = waterFoot;
         }
     }
 }

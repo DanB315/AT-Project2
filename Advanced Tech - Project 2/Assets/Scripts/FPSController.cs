@@ -47,7 +47,6 @@ public class FPSController : MonoBehaviour
     {
         HandleHeadbob();
 
-        #region Handles Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -67,9 +66,6 @@ public class FPSController : MonoBehaviour
             isMoving = false;
         }
 
-        #endregion
-
-        #region Handles Jumping
         if(Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDir.y = jumpPower;
@@ -85,9 +81,6 @@ public class FPSController : MonoBehaviour
             moveDir.y -= gravity * Time.deltaTime;
         }
 
-        #endregion
-
-        #region Handles Rotation
         characterController.Move(moveDir * Time.deltaTime);
 
         if (canMove)
@@ -98,7 +91,6 @@ public class FPSController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
 
-        #endregion
     }
 
     private void HandleHeadbob()
