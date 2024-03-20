@@ -8,6 +8,8 @@ public class Photo : MonoBehaviour
     [Header("PHOTOTAKER")]
     [SerializeField] private Image photoDisplayArea;
     [SerializeField] private GameObject photoFrame;
+    [SerializeField] private GameObject CameraCanvas;
+    public bool cameraReady = false;
 
     private Texture2D screenCap;
     private bool viewingPhoto;
@@ -19,7 +21,7 @@ public class Photo : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && cameraReady)
         {
             if (!viewingPhoto)
             {
@@ -30,10 +32,24 @@ public class Photo : MonoBehaviour
                 RemovePhoto();
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            CameraCanvas.SetActive(true);
+            cameraReady = true;
+            RemovePhoto();
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            CameraCanvas.SetActive(false);
+            cameraReady = false;
+        }
     }
 
     IEnumerator CapturePhoto()
     {
+        CameraCanvas.SetActive(false);
         viewingPhoto = true;
 
         yield return new WaitForEndOfFrame();
